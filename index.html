@@ -85,75 +85,77 @@ body.travelling #skip{opacity:1;pointer-events:auto}
 body.travelling .actions-row,body.travelling .hint{opacity:.25;pointer-events:none;transition:opacity .4s}
 body.travelling .intro{opacity:.35;transition:opacity .4s}
 
-/* ---------- Stage 2: Kolkata taxi drive ---------- */
-#stage-drive{display:none;position:relative;min-height:100vh;min-height:100svh;overflow:hidden;background:#10224f;isolation:isolate}
+/* ---------- Stage 2: high-fidelity Kolkata drive ---------- */
+#stage-drive{display:none;position:relative;min-height:100svh;min-height:100vh;overflow:hidden;background:#0b1631;isolation:isolate}
 #stage-drive.show{display:block}
-.drive-scene{position:absolute;inset:0;overflow:hidden;background:linear-gradient(180deg,#102b68 0%,#31548e 35%,#d58a70 67%,#edb37d 100%)}
-.drive-sky{position:absolute;inset:0 0 32%;overflow:hidden;z-index:0}
-.drive-sun{position:absolute;width:clamp(110px,14vw,190px);aspect-ratio:1;border-radius:50%;right:12%;top:11%;background:radial-gradient(circle,#fff4c2 0 18%,#ffd47d 36%,rgba(255,190,87,.15) 68%,transparent 72%);opacity:.9}
-.haze{position:absolute;inset:25% -10% 0;background:linear-gradient(180deg,transparent,rgba(255,218,178,.25) 70%,rgba(255,226,194,.42));z-index:2}
-.parallax{position:absolute;left:-12%;right:-12%;will-change:transform}
-.far-city{bottom:18%;height:42%;z-index:1;opacity:.30;filter:blur(.35px)}
-.far-city span{position:absolute;bottom:0;width:clamp(28px,5vw,72px);background:#24385e;border-radius:4px 4px 0 0}
-.far-city span:nth-child(1){left:3%;height:52%}.far-city span:nth-child(2){left:10%;height:74%}.far-city span:nth-child(3){left:18%;height:44%}.far-city span:nth-child(4){left:26%;height:68%}.far-city span:nth-child(5){left:35%;height:58%}.far-city span:nth-child(6){left:44%;height:82%}.far-city span:nth-child(7){left:55%;height:51%}.far-city span:nth-child(8){left:64%;height:72%}.far-city span:nth-child(9){left:73%;height:47%}.far-city span:nth-child(10){left:82%;height:64%}.far-city span:nth-child(11){left:91%;height:55%}
-.far-city span::after{content:"";position:absolute;inset:12% 15%;background:repeating-linear-gradient(90deg,rgba(255,231,177,.35) 0 5px,transparent 5px 12px);opacity:.45}
-.landmark{position:absolute;bottom:0;color:rgba(43,47,74,.72);will-change:transform;filter:drop-shadow(0 16px 18px rgba(29,31,54,.16))}
-.landmark svg{display:block;width:100%;height:auto}
-#howrah{left:1%;width:min(48vw,620px);bottom:7%;z-index:2}
-#victoria{left:43%;width:min(24vw,300px);bottom:6%;z-index:3}
-#jadavpur{right:-1%;width:min(29vw,360px);bottom:4%;z-index:2}
-.landmark .label{display:none}
-.mid-city{bottom:17%;height:42%;z-index:4;opacity:.72}
-.mid-city span{position:absolute;bottom:0;width:clamp(46px,8vw,110px);background:linear-gradient(180deg,#b8665e,#8c4c55);border-radius:5px 5px 0 0;box-shadow:inset 0 0 0 1px rgba(255,230,200,.13)}
-.mid-city span:nth-child(1){left:2%;height:68%}.mid-city span:nth-child(2){left:13%;height:83%}.mid-city span:nth-child(3){left:24%;height:57%}.mid-city span:nth-child(4){left:33%;height:76%}.mid-city span:nth-child(5){left:45%;height:61%}.mid-city span:nth-child(6){left:56%;height:88%}.mid-city span:nth-child(7){left:69%;height:64%}.mid-city span:nth-child(8){left:80%;height:79%}.mid-city span:nth-child(9){left:92%;height:54%}
-.mid-city span::before{content:"";position:absolute;inset:10% 12%;background:repeating-linear-gradient(90deg,rgba(255,222,171,.6) 0 7px,transparent 7px 23px),repeating-linear-gradient(180deg,transparent 0 14px,rgba(255,222,171,.35) 14px 20px,transparent 20px 34px);opacity:.46}
-.mid-city span::after{content:"";position:absolute;left:10%;right:10%;bottom:0;height:9%;background:rgba(63,43,54,.5);border-radius:3px 3px 0 0}
-.heritage-arch{position:absolute;left:47%;bottom:0;width:15%;height:22%;z-index:5;border:8px solid rgba(65,45,62,.72);border-bottom:0;border-radius:60% 60% 0 0;box-shadow:0 -2px 0 rgba(255,229,189,.18)}
-.heritage-arch::after{content:"";position:absolute;left:20%;right:20%;top:18%;bottom:0;border:3px solid rgba(255,221,169,.25);border-bottom:0;border-radius:50% 50% 0 0}
-.drive-road{position:absolute;left:-15%;right:-15%;bottom:-4%;height:43%;z-index:6;background:linear-gradient(90deg,rgba(12,16,27,.95),rgba(35,38,48,.98) 38%,rgba(17,21,31,.98) 62%,rgba(11,14,24,.95));clip-path:polygon(17% 0,83% 0,100% 100%,0 100%);box-shadow:inset 0 2px rgba(255,255,255,.12),0 -24px 60px rgba(20,18,36,.2)}
-.road-perspective{position:absolute;inset:0;z-index:7;pointer-events:none;overflow:hidden}
-.lane{position:absolute;top:23%;left:50%;width:5px;height:34%;background:repeating-linear-gradient(180deg,#f8f1dc 0 34px,transparent 34px 74px);transform:translateX(-50%) perspective(300px) rotateX(52deg);transform-origin:50% 0;opacity:.8}
-.lane.l2{left:36%;opacity:.36}.lane.l3{left:64%;opacity:.36}
-.edge-line{position:absolute;top:19%;width:2px;height:88%;background:rgba(255,202,89,.52);transform-origin:top}.edge-line.l{left:20%;transform:rotate(8deg)}.edge-line.r{right:20%;transform:rotate(-8deg)}
-.road-glow{position:absolute;left:50%;bottom:0;width:46%;height:28%;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(255,190,83,.18),transparent 70%);filter:blur(10px);z-index:8}
-.road-lights{position:absolute;inset:0;z-index:8;pointer-events:none}
-.lamp{position:absolute;bottom:31%;width:3px;height:22%;background:#2c2a37;border-radius:3px;opacity:.6}.lamp::before{content:"";position:absolute;left:50%;top:-6px;width:13px;height:6px;border-radius:999px;background:#ffe7ae;transform:translateX(-50%);box-shadow:0 0 20px rgba(255,216,138,.8)}
-.lamp:nth-child(1){left:15%}.lamp:nth-child(2){left:30%;transform:scale(.72)}.lamp:nth-child(3){right:30%;transform:scale(.72)}.lamp:nth-child(4){right:15%}
-.taxi-wrap{position:absolute;left:50%;bottom:8%;width:clamp(255px,32vw,430px);height:clamp(120px,16vw,190px);transform:translateX(-50%);z-index:14;will-change:transform;filter:drop-shadow(0 22px 18px rgba(12,13,22,.35))}
-.taxi-car{position:absolute;inset:0}.taxi-shadow{position:absolute;left:8%;right:7%;bottom:0;height:18%;border-radius:50%;background:rgba(8,10,17,.45);filter:blur(8px)}
-.taxi-body{position:absolute;left:3%;right:3%;bottom:17%;height:48%;background:linear-gradient(180deg,#ffd94b 0%,#f8c42c 54%,#e9a91b 100%);border:3px solid #1a1b21;border-radius:28px 38px 18px 18px}
-.taxi-roof{position:absolute;left:24%;right:22%;top:5%;height:48%;background:linear-gradient(180deg,#f9c52b,#e8aa18);border:3px solid #1a1b21;border-bottom:0;border-radius:65% 65% 8px 8px;clip-path:polygon(16% 0,82% 0,100% 100%,0 100%)}
-.taxi-window{position:absolute;top:13%;height:35%;z-index:3;background:linear-gradient(180deg,rgba(35,55,69,.88),rgba(72,82,83,.7));border:2px solid #191a20}.taxi-window.w1{left:29%;width:21%;clip-path:polygon(24% 0,100% 0,100% 100%,0 100%)}.taxi-window.w2{left:51%;width:22%;clip-path:polygon(0 0,77% 0,100% 100%,0 100%)}.taxi-window::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.14),transparent 42%)}
-.driver-silhouette{position:absolute;left:56%;top:18%;width:12%;height:28%;z-index:4;opacity:.34;background:#17191f;border-radius:50% 50% 35% 35%}.driver-silhouette::after{content:"";position:absolute;left:-18%;right:-18%;bottom:-34%;height:52%;background:#17191f;border-radius:45% 45% 18% 18%}
-.taxi-stripe{position:absolute;left:4%;right:4%;bottom:39%;height:11%;background:#16609b;border-top:2px solid rgba(255,255,255,.45);border-bottom:2px solid rgba(11,45,72,.7);z-index:5}
-.taxi-chrome{position:absolute;left:4%;right:4%;bottom:27%;height:3px;background:rgba(255,255,255,.62);z-index:5}
-.wheel{position:absolute;bottom:1%;width:23%;aspect-ratio:1;border-radius:50%;background:#17191f;border:5px solid #0a0b10;z-index:6;box-shadow:inset 0 0 0 5px #4e5057,inset 0 0 0 10px #b7b9ba}.wheel::after{content:"";position:absolute;inset:39%;border-radius:50%;background:#56595f}.wheel.wl{left:13%}.wheel.wr{right:12%}
-.taxi-headlamp{position:absolute;right:2%;bottom:31%;width:7%;height:11%;border-radius:50%;background:#fff8cf;box-shadow:0 0 22px rgba(255,241,175,.9);z-index:6}
-.taxi-bumper{position:absolute;right:0;bottom:18%;width:7%;height:9%;border-radius:0 8px 8px 0;background:#c5c8c9;border:2px solid #72767a;z-index:6}
-.taxi-sign{position:absolute;top:0;left:46%;width:13%;height:13%;border-radius:5px 5px 2px 2px;background:#f8f2d4;border:2px solid #1a1b21;z-index:7}
-.drive-vignette{position:absolute;inset:0;z-index:20;pointer-events:none;background:radial-gradient(ellipse at center,transparent 46%,rgba(8,15,36,.18) 100%)}
-@media (max-width:700px){.drive-sky{inset:0 0 34%}.far-city{bottom:18%;height:38%}.mid-city{bottom:19%;height:36%}#howrah{left:-22%;width:82vw;bottom:10%}#victoria{left:46%;width:40vw;bottom:9%}#jadavpur{right:-18%;width:48vw;bottom:7%}.drive-road{height:40%}.taxi-wrap{width:min(88vw,360px);height:min(34vw,155px);bottom:7%}.lane{top:20%;height:40%}.edge-line.l{left:14%}.edge-line.r{right:14%}}
-/* reveal floats over the same Kolkata scene */
-.final-reveal{position:absolute;inset:0;z-index:12;display:grid;place-items:center;padding:22px;pointer-events:none;opacity:0;transition:opacity .9s ease;background:linear-gradient(180deg,rgba(13,26,70,.13),rgba(33,16,47,.58))}
+.drive-world{position:absolute;inset:0;overflow:hidden;background:linear-gradient(180deg,#102d62 0%,#2d5685 42%,#d78c70 69%,#eab27e 100%)}
+.drive-world::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 21%,rgba(255,221,158,.82) 0 3%,rgba(255,193,113,.18) 10%,transparent 22%),linear-gradient(180deg,transparent 56%,rgba(19,20,34,.25));z-index:1;pointer-events:none}
+.cine-grain{position:absolute;inset:0;z-index:30;opacity:.055;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.sky-haze{position:absolute;inset:34% -10% 28%;z-index:3;background:linear-gradient(180deg,transparent,rgba(255,220,177,.16),rgba(255,205,163,.28));filter:blur(12px)}
+.city-depth{position:absolute;left:-15%;width:130%;bottom:32%;height:32%;z-index:4;transform-origin:center bottom;will-change:transform}
+.city-depth.far{opacity:.32;filter:blur(.2px)}
+.city-depth.mid{bottom:29%;height:29%;opacity:.7;z-index:6}
+.block{position:absolute;bottom:0;border-radius:3px 3px 0 0;background:linear-gradient(180deg,#53627d,#3c4967 75%,#2c354f);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+.block::after{content:"";position:absolute;inset:10% 12%;background:repeating-linear-gradient(90deg,rgba(250,224,180,.38) 0 5px,transparent 5px 17px),repeating-linear-gradient(180deg,transparent 0 13px,rgba(250,224,180,.25) 13px 18px,transparent 18px 30px);opacity:.5}
+.far .b1{left:2%;width:8%;height:46%}.far .b2{left:12%;width:11%;height:67%}.far .b3{left:25%;width:7%;height:53%}.far .b4{left:34%;width:13%;height:78%}.far .b5{left:49%;width:8%;height:58%}.far .b6{left:60%;width:11%;height:71%}.far .b7{left:73%;width:8%;height:51%}.far .b8{left:83%;width:12%;height:73%}.far .b9{left:96%;width:7%;height:55%}
+.mid .block{background:linear-gradient(180deg,#a95e5b,#794a57 72%,#51394d)}
+.mid .b1{left:0;width:11%;height:58%}.mid .b2{left:12%;width:9%;height:76%}.mid .b3{left:23%;width:13%;height:52%}.mid .b4{left:38%;width:8%;height:68%}.mid .b5{left:48%;width:14%;height:60%}.mid .b6{left:64%;width:10%;height:80%}.mid .b7{left:76%;width:13%;height:56%}.mid .b8{left:91%;width:8%;height:72%}
+.landmark{position:absolute;bottom:0;z-index:9;will-change:transform;transform-origin:center bottom;filter:drop-shadow(0 20px 20px rgba(19,22,38,.24))}
+.landmark svg{display:block;width:100%;height:auto;overflow:visible}
+.landmark .label{position:absolute;left:50%;bottom:-28px;transform:translateX(-50%);font:600 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,245,224,.72);white-space:nowrap;text-shadow:0 2px 8px rgba(0,0,0,.35)}
+#howrah{left:-5%;width:min(54vw,720px);bottom:26%;z-index:9}
+#victoria{left:42%;width:min(25vw,330px);bottom:25%;z-index:10}
+#jadavpur{right:-4%;width:min(31vw,400px);bottom:24%;z-index:9}
+.landmark-backlight{position:absolute;left:0;right:0;bottom:27%;height:22%;z-index:8;background:radial-gradient(ellipse at 50% 80%,rgba(255,195,105,.22),transparent 68%)}
+.road{position:absolute;left:-10%;right:-10%;bottom:-6%;height:47%;z-index:13;background:linear-gradient(180deg,#343642 0%,#20212a 44%,#11131b 100%);clip-path:polygon(31% 0,69% 0,100% 100%,0 100%);box-shadow:inset 0 2px rgba(255,255,255,.14),0 -22px 60px rgba(18,17,31,.26)}
+.road::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.05),transparent 20%,transparent 80%,rgba(255,255,255,.05))}
+.road-markings{position:absolute;inset:0;z-index:14;overflow:hidden;perspective:700px}
+.road-markings .center,.road-markings .side{position:absolute;top:-20%;height:140%;background:repeating-linear-gradient(180deg,rgba(250,246,229,.88) 0 34px,transparent 34px 90px);will-change:transform}
+.road-markings .center{left:49.3%;width:5px;transform:skewX(-2deg)}
+.road-markings .center.r{left:50.7%}
+.road-markings .side{top:4%;height:110%;width:3px;opacity:.4}.road-markings .side.l{left:31%}.road-markings .side.r{right:31%}
+.road-edge{position:absolute;left:0;right:0;bottom:0;height:18%;z-index:15;background:linear-gradient(180deg,transparent,rgba(7,8,14,.42));pointer-events:none}
+.street-furniture{position:absolute;inset:0;z-index:16;pointer-events:none;overflow:hidden}
+.lamp-post{position:absolute;bottom:31%;width:4px;height:28%;background:linear-gradient(90deg,#1b202a,#59606a,#151a22);border-radius:4px;will-change:transform}
+.lamp-post::before{content:"";position:absolute;left:50%;top:-5px;width:22px;height:9px;border-radius:100% 100% 30% 30%;background:#ffe4a9;transform:translateX(-50%);box-shadow:0 0 25px rgba(255,218,144,.8)}
+.lp1{left:13%}.lp2{left:27%;transform:scale(.72)}.lp3{right:27%;transform:scale(.72)}.lp4{right:13%}
+.taxi-wrap{position:absolute;left:50%;bottom:10%;width:min(58vw,520px);height:min(28vw,250px);transform:translate3d(-50%,0,0) scale(.72);z-index:22;will-change:transform;filter:drop-shadow(0 26px 20px rgba(7,9,15,.48))}
+.taxi-car{position:absolute;inset:0}
+.taxi-shadow{position:absolute;left:5%;right:4%;bottom:1%;height:15%;border-radius:50%;background:rgba(4,6,11,.62);filter:blur(10px)}
+.taxi-body{position:absolute;left:2%;right:2%;bottom:17%;height:50%;background:linear-gradient(180deg,#ffd94a 0%,#f6c127 52%,#df9f16 100%);border:4px solid #161920;border-radius:30px 46px 19px 19px;box-shadow:inset 0 10px 12px rgba(255,255,255,.13)}
+.taxi-roof{position:absolute;left:23%;right:21%;top:2%;height:51%;background:linear-gradient(180deg,#f9c82f,#e6a916);border:4px solid #161920;border-bottom:0;border-radius:74% 74% 8px 8px;clip-path:polygon(14% 0,84% 0,100% 100%,0 100%)}
+.taxi-window{position:absolute;top:11%;height:37%;z-index:4;background:linear-gradient(145deg,#52656a,#25313a 58%,#162029);border:3px solid #151820;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)}
+.taxi-window.w1{left:28%;width:22%;clip-path:polygon(22% 0,100% 0,100% 100%,0 100%)}.taxi-window.w2{left:51%;width:23%;clip-path:polygon(0 0,78% 0,100% 100%,0 100%)}
+.taxi-window::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.2),transparent 38%)}
+.driver-silhouette{position:absolute;left:57%;top:16%;width:11%;height:28%;z-index:5;opacity:.18;background:#11161c;border-radius:50% 50% 38% 38%}.driver-silhouette::after{content:"";position:absolute;left:-30%;right:-30%;bottom:-38%;height:60%;background:#11161c;border-radius:45% 45% 15% 15%}
+.taxi-stripe{position:absolute;left:3%;right:3%;bottom:39%;height:10%;background:linear-gradient(180deg,#1f6da4,#145887);border-top:2px solid rgba(255,255,255,.48);border-bottom:2px solid rgba(11,43,68,.72);z-index:6}
+.taxi-chrome{position:absolute;left:3%;right:3%;bottom:27%;height:4px;background:linear-gradient(90deg,#8c8f91,#f2f2e9,#a4a8aa);z-index:6}
+.wheel{position:absolute;bottom:0;width:24%;aspect-ratio:1;border-radius:50%;background:#17191f;border:6px solid #080a0f;z-index:7;box-shadow:inset 0 0 0 5px #4e5158,inset 0 0 0 10px #c4c6c7,0 4px 5px rgba(0,0,0,.35)}.wheel::after{content:"";position:absolute;inset:39%;border-radius:50%;background:#60646a}.wheel.wl{left:11%}.wheel.wr{right:10%}
+.taxi-headlamp{position:absolute;right:1%;bottom:30%;width:7%;height:12%;border-radius:50%;background:#fff9d4;box-shadow:0 0 28px rgba(255,238,167,.95);z-index:8}.taxi-bumper{position:absolute;right:-1%;bottom:17%;width:8%;height:9%;border-radius:0 9px 9px 0;background:linear-gradient(#d6d8d7,#8d9294);border:2px solid #62676b;z-index:8}.taxi-sign{position:absolute;top:-2%;left:44%;width:14%;height:13%;border-radius:5px 5px 2px 2px;background:#f8f2d4;border:3px solid #171920;z-index:9;box-shadow:0 3px 5px rgba(0,0,0,.18)}
+.drive-ui{position:absolute;left:50%;top:6%;transform:translateX(-50%);z-index:25;text-align:center;color:#fff;opacity:.9;pointer-events:none;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.drive-ui .eyebrow{font:600 10px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;opacity:.7}.drive-ui .route{margin-top:7px;font:400 clamp(1.15rem,3vw,1.8rem)/1.1 var(--serif)}
+.landmark-tag{position:absolute;left:50%;bottom:18%;transform:translateX(-50%) translateY(8px);z-index:24;padding:7px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.24);background:rgba(10,18,42,.35);backdrop-filter:blur(10px);font:600 10px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,247,229,.9);opacity:0;transition:opacity .35s,transform .35s}
+.drive-vignette{position:absolute;inset:0;z-index:28;pointer-events:none;background:radial-gradient(ellipse at center,transparent 46%,rgba(5,10,28,.28) 100%),linear-gradient(180deg,rgba(7,15,36,.08),transparent 35%,rgba(8,9,18,.18))}
+/* high-fidelity responsive reveal */
+.final-reveal{position:absolute;inset:0;z-index:40;display:grid;place-items:center;padding:max(18px,env(safe-area-inset-top)) 18px max(18px,env(safe-area-inset-bottom));pointer-events:none;opacity:0;transition:opacity .75s ease;background:linear-gradient(180deg,rgba(10,22,58,.35),rgba(24,10,35,.76))}
 #stage-drive.revealed .final-reveal{opacity:1;pointer-events:auto}
-#stage-drive.revealed .drive-caption{opacity:0;transition:opacity .4s ease}
-.reveal-card{width:min(92vw,720px);text-align:center;transform:translateY(26px) scale(.98);transition:transform 1s cubic-bezier(.2,.8,.2,1);color:#fff}
+#stage-drive.revealed .drive-world{filter:brightness(.58) saturate(.82);transition:filter .8s ease}
+.reveal-card{width:min(94vw,780px);max-height:calc(100svh - 36px);overflow:auto;text-align:center;color:#fff;transform:translateY(24px) scale(.985);transition:transform .9s cubic-bezier(.2,.8,.2,1);padding:6px 0 10px;scrollbar-width:none}.reveal-card::-webkit-scrollbar{display:none}
 #stage-drive.revealed .reveal-card{transform:none}
-.couple-photo{width:min(76vw,390px);margin:0 auto 18px;position:relative}
-.couple-photo .frame{aspect-ratio:4/3;border-radius:24px;overflow:hidden;border:2px solid rgba(255,255,255,.75);box-shadow:0 24px 60px rgba(4,8,30,.40);background:#ddd;transform:rotate(-1deg)}
-.couple-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:50% 72%}
-.couple-photo::after{content:"KOLKATA • 2027";position:absolute;right:-7px;bottom:-8px;background:var(--marigold);color:#2a1b22;border-radius:999px;padding:7px 12px;font-size:.72rem;font-weight:800;letter-spacing:.08em;box-shadow:0 8px 18px rgba(0,0,0,.2)}
-.bn{font-size:1.1rem;font-weight:600;color:#ffd46b;letter-spacing:.08em}.names{font-family:var(--serif);font-weight:400;font-size:clamp(2.45rem,8vw,4.3rem);line-height:.98;margin:4px 0 8px}.save{font-size:clamp(.9rem,2vw,1.05rem);text-transform:uppercase;letter-spacing:.22em;opacity:.82}.date{font-family:var(--serif);font-size:clamp(1.65rem,5vw,2.7rem);margin-top:7px}.place{font-size:1.05rem;opacity:.9}.guest-line{margin-top:7px;font-size:.95rem;opacity:.82}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;justify-content:center}.btn{border-radius:999px;padding:10px 18px;border:1px solid rgba(255,255,255,.6);font-weight:700;background:rgba(255,255,255,.10);color:#fff;backdrop-filter:blur(9px)}.btn.primary{background:#fff;color:#26336d;border-color:#fff}.again{display:block;margin:12px auto 0;background:none;border:0;color:#fff;text-decoration:underline;text-underline-offset:4px;opacity:.78;font-size:.92rem}
-
+.couple-photo{width:min(54vw,360px);margin:0 auto 15px;position:relative}.couple-photo .frame{width:100%;aspect-ratio:9/15;border-radius:26px;overflow:hidden;border:2px solid rgba(255,255,255,.86);box-shadow:0 26px 70px rgba(0,0,0,.45);background:#d8c7bb;transform:rotate(-1deg)}
+.couple-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center center}
+.couple-photo::after{content:"KOLKATA • 2027";position:absolute;right:-11px;bottom:-7px;background:#ffc928;color:#241b25;border-radius:999px;padding:8px 13px;font-size:.68rem;font-weight:800;letter-spacing:.12em;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.bn{font-size:1rem;font-weight:600;color:#ffd46b;letter-spacing:.08em}.names{font-family:var(--serif);font-weight:400;font-size:clamp(2.35rem,7vw,4.2rem);line-height:.98;margin:4px 0 8px}.save{font-size:clamp(.78rem,2vw,1rem);text-transform:uppercase;letter-spacing:.24em;opacity:.82}.date{font-family:var(--serif);font-size:clamp(1.55rem,4.8vw,2.6rem);margin-top:7px}.place{font-size:1rem;opacity:.9}.guest-line{margin-top:6px;font-size:.9rem;opacity:.82}.cta{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px;justify-content:center}.btn{border-radius:999px;padding:10px 17px;border:1px solid rgba(255,255,255,.6);font-weight:700;background:rgba(255,255,255,.1);color:#fff;backdrop-filter:blur(9px)}.btn.primary{background:#fff;color:#26336d;border-color:#fff}.again{display:block;margin:11px auto 0;background:none;border:0;color:#fff;text-decoration:underline;text-underline-offset:4px;opacity:.78;font-size:.9rem}
 @media (max-width:700px){
-  #howrah{left:-12%;width:72vw;bottom:15%}#victoria{left:48%;width:36vw;bottom:9%}#jadavpur{right:-10%;width:42vw;bottom:6%}.landmark .label{display:none}
-  .drive-road{height:35%}.taxi-wrap{bottom:6%}.drive-sky{inset:0 0 26%}.couple-photo{width:min(80vw,350px)}
+  .drive-ui{top:5.5%}.drive-ui .route{font-size:1.18rem}.city-depth{bottom:35%;height:27%}.city-depth.mid{bottom:32%;height:25%}.landmark .label{display:none}
+  #howrah{left:-35%;width:118vw;bottom:29%}#victoria{left:31%;width:58vw;bottom:29%}#jadavpur{right:-28%;width:72vw;bottom:28%}
+  .road{height:45%;clip-path:polygon(20% 0,80% 0,100% 100%,0 100%)}.road-markings .center{width:4px}.road-markings .side.l{left:20%}.road-markings .side.r{right:20%}
+  .taxi-wrap{width:92vw;height:45vw;bottom:9%;transform:translate3d(-50%,0,0) scale(.68)}
+  .lamp-post{bottom:31%;height:25%}.lp1{left:7%}.lp4{right:7%}.landmark-tag{bottom:21%;font-size:9px}
+  .final-reveal{padding:14px 12px max(14px,env(safe-area-inset-bottom))}.reveal-card{max-height:calc(100svh - 28px)}.couple-photo{width:min(52vw,300px)}.names{font-size:clamp(2.05rem,9vw,3.2rem)}.date{font-size:clamp(1.35rem,6vw,2rem)}.cta{margin-top:12px}.btn{padding:9px 14px;font-size:.88rem}
 }
-@media (prefers-reduced-motion:reduce){
-  #kol .ring{animation:none}
-  #stage-map,.final-reveal,.reveal-card{transition:none}
-}
+@media (min-width:701px){.couple-photo{width:min(30vw,330px)}.final-reveal{padding:30px}.reveal-card{display:grid;grid-template-columns:330px minmax(300px,1fr);column-gap:34px;align-items:center;text-align:left}.couple-photo{grid-row:1 / span 7;margin:0}.couple-photo::after{right:-16px}.reveal-card .bn,.reveal-card .names,.reveal-card .save,.reveal-card .date,.reveal-card .place,.reveal-card .guest-line{justify-self:start}.cta{justify-content:flex-start}.again{margin-left:0}}
+@media (prefers-reduced-motion:reduce){#kol .ring{animation:none}#stage-map,.final-reveal,.reveal-card{transition:none}}
 </style>
 </head>
 <body>
@@ -186,26 +188,82 @@ body.travelling .intro{opacity:.35;transition:opacity .4s}
 <button id="skip" type="button">Skip animation</button>
 
 <section id="stage-drive" aria-live="polite">
-  <div class="drive-scene">
-    <div class="drive-sky" aria-hidden="true">
-      <div class="drive-sun"></div>
-      <div class="parallax far-city"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-      <div class="haze"></div>
-      <div class="parallax skyline" id="skyline">
-        <div class="landmark" id="howrah"><svg viewBox="0 0 620 220" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linecap="round"><path d="M20 185H600" stroke-width="8"/><path d="M45 185L110 48L175 185M445 185L510 48L575 185" stroke-width="12"/><path d="M110 48H510" stroke-width="11"/><path d="M110 70H510M110 101H510M110 132H510M110 162H510" stroke-width="5" opacity=".8"/><path d="M110 48L175 185M175 48L110 185M175 48L240 185M240 48L175 185M240 48L305 185M305 48L240 185M305 48L370 185M370 48L305 185M370 48L435 185M435 48L370 185M435 48L510 185M510 48L435 185" stroke-width="4" opacity=".9"/><path d="M110 48L175 101L240 48L305 101L370 48L435 101L510 48" stroke-width="4"/></g></svg></div>
-        <div class="landmark" id="victoria"><svg viewBox="0 0 300 240" aria-hidden="true"><g fill="currentColor"><rect x="28" y="145" width="244" height="60" rx="3"/><rect x="45" y="119" width="210" height="32"/><path d="M55 119Q150 47 245 119Z"/><ellipse cx="150" cy="74" rx="25" ry="29"/><path d="M150 17L159 47H141Z"/><rect x="62" y="150" width="14" height="55"/><rect x="104" y="150" width="14" height="55"/><rect x="142" y="150" width="16" height="55"/><rect x="180" y="150" width="14" height="55"/><rect x="224" y="150" width="14" height="55"/></g></svg></div>
-        <div class="landmark" id="jadavpur"><svg viewBox="0 0 360 210" aria-hidden="true"><g fill="currentColor"><rect x="24" y="92" width="312" height="88" rx="4"/><rect x="82" y="68" width="196" height="112"/><path d="M70 68H290L276 47H84Z"/><rect x="158" y="28" width="44" height="40"/><rect x="46" y="112" width="34" height="38"/><rect x="280" y="112" width="34" height="38"/><path d="M128 180V121Q128 103 180 103Q232 103 232 121V180Z" fill="rgba(35,38,58,.32)"/></g></svg></div>
-        <div class="heritage-arch"></div>
-      </div>
-      <div class="parallax mid-city"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="drive-world">
+    <div class="drive-ui" aria-hidden="true"><div class="eyebrow">Arriving in Kolkata</div><div class="route">A little city, a little journey, a lot of love.</div></div>
+    <div class="sky-haze" aria-hidden="true"></div>
+    <div class="landmark-backlight" aria-hidden="true"></div>
+    <div class="city-depth far" aria-hidden="true">
+      <i class="block b1"></i><i class="block b2"></i><i class="block b3"></i><i class="block b4"></i><i class="block b5"></i><i class="block b6"></i><i class="block b7"></i><i class="block b8"></i><i class="block b9"></i>
     </div>
-    <div class="drive-road" aria-hidden="true"></div>
-    <div class="road-perspective" aria-hidden="true"><div class="lane"></div><div class="lane l2"></div><div class="lane l3"></div><div class="edge-line l"></div><div class="edge-line r"></div><div class="road-glow"></div></div>
-    <div class="road-lights" aria-hidden="true"><i class="lamp"></i><i class="lamp"></i><i class="lamp"></i><i class="lamp"></i></div>
-    <div class="taxi-wrap" id="drive-taxi" aria-hidden="true"><div class="taxi-car"><div class="taxi-shadow"></div><div class="taxi-roof"></div><div class="taxi-window w1"></div><div class="taxi-window w2"></div><div class="driver-silhouette"></div><div class="taxi-body"></div><div class="taxi-stripe"></div><div class="taxi-chrome"></div><div class="taxi-headlamp"></div><div class="taxi-bumper"></div><div class="taxi-sign"></div><div class="wheel wl"></div><div class="wheel wr"></div></div></div>
-    <div class="drive-vignette" aria-hidden="true"></div>
+    <div class="city-depth mid" aria-hidden="true">
+      <i class="block b1"></i><i class="block b2"></i><i class="block b3"></i><i class="block b4"></i><i class="block b5"></i><i class="block b6"></i><i class="block b7"></i><i class="block b8"></i>
+    </div>
+
+    <div class="landmark" id="howrah" aria-hidden="true">
+      <svg viewBox="0 0 720 320">
+        <defs><linearGradient id="hwWall" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d57a60"/><stop offset="1" stop-color="#8e4d50"/></linearGradient><linearGradient id="hwRoof" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ead7bd"/><stop offset="1" stop-color="#ad765f"/></linearGradient></defs>
+        <rect x="70" y="135" width="580" height="125" rx="5" fill="url(#hwWall)" stroke="#4a3543" stroke-width="6"/>
+        <path d="M42 136 Q72 88 110 78 L110 136 M610 136 Q648 88 678 78 L678 136" fill="url(#hwRoof)" stroke="#4a3543" stroke-width="6"/>
+        <path d="M76 135 Q105 58 150 52 Q195 58 220 135 M500 135 Q525 58 570 52 Q615 58 644 135" fill="url(#hwRoof)" stroke="#4a3543" stroke-width="6"/>
+        <rect x="236" y="70" width="248" height="190" fill="url(#hwWall)" stroke="#4a3543" stroke-width="6"/>
+        <path d="M230 72 Q360 22 490 72 L475 95 Q360 57 245 95Z" fill="#e6cfb0" stroke="#4a3543" stroke-width="6"/>
+        <rect x="333" y="42" width="54" height="34" rx="3" fill="#f1dfbf" stroke="#4a3543" stroke-width="5"/>
+        <circle cx="360" cy="59" r="12" fill="#596070" stroke="#4a3543" stroke-width="4"/><path d="M360 48V59L367 64" stroke="#f6dfb7" stroke-width="2"/>
+        <g fill="#f3dcb7" stroke="#573d49" stroke-width="4">
+          <path d="M92 260V174 Q92 143 120 143 Q148 143 148 174V260Z"/><path d="M160 260V174 Q160 143 188 143 Q216 143 216 174V260Z"/>
+          <path d="M265 260V166 Q265 136 292 136 Q319 136 319 166V260Z"/><path d="M327 260V166 Q327 136 354 136 Q381 136 381 166V260Z"/><path d="M389 260V166 Q389 136 416 136 Q443 136 443 166V260Z"/>
+          <path d="M504 260V174 Q504 143 532 143 Q560 143 560 174V260Z"/><path d="M572 260V174 Q572 143 600 143 Q628 143 628 174V260Z"/>
+        </g>
+        <rect x="0" y="260" width="720" height="60" fill="#5a4550" opacity=".5"/>
+        <g fill="#ffd69b" opacity=".7"><circle cx="115" cy="165" r="3"/><circle cx="183" cy="165" r="3"/><circle cx="280" cy="157" r="3"/><circle cx="350" cy="157" r="3"/><circle cx="420" cy="157" r="3"/><circle cx="538" cy="165" r="3"/><circle cx="606" cy="165" r="3"/></g>
+      </svg><span class="label">Howrah Station</span>
+    </div>
+
+    <div class="landmark" id="victoria" aria-hidden="true">
+      <svg viewBox="0 0 330 320">
+        <defs><linearGradient id="vmStone" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#eee2ca"/><stop offset="1" stop-color="#b9ad9d"/></linearGradient></defs>
+        <ellipse cx="165" cy="298" rx="142" ry="15" fill="#18202c" opacity=".3"/>
+        <rect x="36" y="180" width="258" height="105" rx="3" fill="url(#vmStone)" stroke="#655b5b" stroke-width="5"/>
+        <path d="M30 182 Q165 108 300 182" fill="url(#vmStone)" stroke="#655b5b" stroke-width="5"/>
+        <g fill="#c9bda9" stroke="#655b5b" stroke-width="4"><rect x="60" y="181" width="18" height="104"/><rect x="104" y="181" width="18" height="104"/><rect x="151" y="181" width="22" height="104"/><rect x="208" y="181" width="18" height="104"/><rect x="252" y="181" width="18" height="104"/></g>
+        <g fill="#4e535d"><path d="M142 180V142 Q142 122 165 122 Q188 122 188 142V180Z"/><path d="M72 180V151 Q72 133 91 133 Q110 133 110 151V180Z"/><path d="M220 180V151 Q220 133 239 133 Q258 133 258 151V180Z"/></g>
+        <path d="M165 112 Q130 93 118 112 Q135 70 165 52 Q195 70 212 112 Q200 93 165 112Z" fill="url(#vmStone)" stroke="#655b5b" stroke-width="5"/>
+        <ellipse cx="165" cy="59" rx="28" ry="30" fill="url(#vmStone)" stroke="#655b5b" stroke-width="5"/><path d="M165 20 L177 44 L153 44Z" fill="#b9ad9d" stroke="#655b5b" stroke-width="4"/><circle cx="165" cy="16" r="4" fill="#e9d6aa"/>
+        <path d="M34 180 H296" stroke="#f4e7c9" stroke-width="7" opacity=".7"/>
+      </svg><span class="label">Victoria Memorial</span>
+    </div>
+
+    <div class="landmark" id="jadavpur" aria-hidden="true">
+      <svg viewBox="0 0 400 290">
+        <defs><linearGradient id="juWall" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#cf7d63"/><stop offset="1" stop-color="#874c50"/></linearGradient></defs>
+        <rect x="18" y="138" width="364" height="125" rx="4" fill="url(#juWall)" stroke="#4b3542" stroke-width="5"/>
+        <path d="M0 140 L200 66 L400 140" fill="#e7d0b2" stroke="#4b3542" stroke-width="5"/>
+        <path d="M38 137 L200 88 L362 137" fill="#b96558" stroke="#4b3542" stroke-width="5"/>
+        <g fill="#f0d7b2" stroke="#4b3542" stroke-width="4"><path d="M48 263V174 Q48 149 70 149 Q92 149 92 174V263Z"/><path d="M105 263V174 Q105 149 127 149 Q149 149 149 174V263Z"/><path d="M251 263V174 Q251 149 273 149 Q295 149 295 174V263Z"/><path d="M308 263V174 Q308 149 330 149 Q352 149 352 174V263Z"/></g>
+        <rect x="161" y="143" width="78" height="120" fill="#633f49"/><path d="M173 263V191 Q173 164 200 164 Q227 164 227 191V263Z" fill="#f0d7b2" stroke="#4b3542" stroke-width="4"/>
+        <rect x="92" y="91" width="216" height="37" rx="3" fill="#ead8bd" stroke="#4b3542" stroke-width="4"/><text x="200" y="116" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#4b3542">JADAVPUR UNIVERSITY</text>
+        <g fill="#f5d28d" opacity=".65"><circle cx="65" cy="163" r="3"/><circle cx="122" cy="163" r="3"/><circle cx="278" cy="163" r="3"/><circle cx="335" cy="163" r="3"/></g>
+      </svg><span class="label">Jadavpur University</span>
+    </div>
+
+    <div class="road" aria-hidden="true"></div>
+    <div class="road-markings" aria-hidden="true"><i class="center"></i><i class="center r"></i><i class="side l"></i><i class="side r"></i></div>
+    <div class="road-edge" aria-hidden="true"></div>
+    <div class="street-furniture" aria-hidden="true"><i class="lamp-post lp1"></i><i class="lamp-post lp2"></i><i class="lamp-post lp3"></i><i class="lamp-post lp4"></i></div>
+
+    <div class="landmark-tag" id="landmark-tag">Howrah Station</div>
+
+    <div class="taxi-wrap" id="drive-taxi" aria-hidden="true">
+      <div class="taxi-car"><div class="taxi-shadow"></div><div class="taxi-roof"></div><div class="taxi-window w1"></div><div class="taxi-window w2"></div><div class="driver-silhouette"></div><div class="taxi-body"></div><div class="taxi-stripe"></div><div class="taxi-chrome"></div><div class="taxi-headlamp"></div><div class="taxi-bumper"></div><div class="taxi-sign"></div><div class="wheel wl"></div><div class="wheel wr"></div></div>
+    </div>
+    <div class="drive-vignette" aria-hidden="true"></div><div class="cine-grain" aria-hidden="true"></div>
   </div>
-  <div class="final-reveal"><div class="reveal-card"><div class="couple-photo"><div class="frame"><img src="rooftop.jpg" alt="Nilesh and Rushali together in Kolkata"></div></div><p class="bn" lang="bn">শুভ বিবাহ</p><h2 class="names">Nilesh &amp; Rushali</h2><p class="save">Save the Date</p><p class="date">25–26 January 2027</p><p class="place">Kolkata</p><p class="guest-line" id="guest-line"></p><div class="cta"><button class="btn primary" id="btn-cal" type="button">Add to Calendar</button><button class="btn" id="btn-wa" type="button">Share on WhatsApp</button></div><button class="again" id="btn-again" type="button">Take the journey again</button></div></div>
+  <div class="final-reveal">
+    <div class="reveal-card">
+      <div class="couple-photo"><div class="frame"><img src="rooftop.jpg" alt="Nilesh and Rushali together in Kolkata"></div></div>
+      <div><p class="bn" lang="bn">শুভ বিবাহ</p><h2 class="names">Nilesh &amp; Rushali</h2><p class="save">Save the Date</p><p class="date">25–26 January 2027</p><p class="place">Kolkata</p><p class="guest-line" id="guest-line"></p><div class="cta"><button class="btn primary" id="btn-cal" type="button">Add to Calendar</button><button class="btn" id="btn-wa" type="button">Share on WhatsApp</button></div><button class="again" id="btn-again" type="button">Take the journey again</button></div>
+    </div>
+  </div>
 </section>
 <script>
 const D = {"W":834,"H":933,"path":"M275.9,63.4 280.6,64.4 284.1,62.3 286.8,64.1 287.6,61.2 293.7,61.5 296.1,56.2 304.2,55.1 311.5,51.9 313.1,48.8 317.9,50.6 324.6,50.2 326.6,48.4 329.4,49.0 330.7,52.5 333.0,51.1 333.0,53.6 336.7,58.8 339.8,59.2 340.6,60.8 343.6,59.0 344.9,59.9 344.0,61.4 346.4,65.3 350.6,60.7 356.4,63.7 356.4,65.2 352.9,67.4 352.8,71.9 350.3,74.5 350.6,81.3 348.7,81.9 347.0,86.8 342.1,87.1 339.0,89.2 339.2,93.6 331.3,94.4 334.0,100.9 330.7,102.3 328.3,107.9 319.9,108.3 317.0,106.9 314.0,108.8 317.9,115.4 317.4,117.4 319.6,118.9 314.5,119.4 315.4,126.6 320.1,132.0 323.1,130.9 328.5,132.3 326.3,138.0 332.6,145.2 332.4,147.7 328.6,152.4 324.8,151.3 320.8,153.6 319.9,156.9 316.2,157.9 311.0,153.6 309.9,147.1 306.9,149.8 303.6,149.6 300.3,152.1 302.4,154.7 302.9,159.7 311.0,168.2 308.8,173.8 310.2,177.6 312.8,179.7 309.3,182.7 311.4,184.7 310.1,187.0 310.9,188.6 314.3,189.3 319.9,184.4 323.7,188.0 323.4,190.2 325.8,193.6 328.6,194.8 329.0,197.3 331.2,197.0 333.9,199.8 338.0,197.8 341.2,198.8 343.0,201.6 351.6,205.1 350.3,208.0 351.0,210.6 360.0,214.5 361.8,213.9 367.2,218.3 373.6,220.6 372.6,222.4 370.2,221.3 365.7,227.8 361.7,229.2 358.6,234.1 355.1,235.6 356.3,240.1 351.7,244.7 353.7,248.6 353.2,251.8 351.8,251.4 352.5,253.7 348.9,254.9 346.5,260.5 347.0,263.3 352.0,265.3 359.3,271.4 358.9,268.1 360.7,267.4 366.8,272.3 373.2,274.4 373.7,276.1 378.6,277.2 381.6,284.0 385.1,283.2 386.0,285.5 397.3,292.3 399.7,290.1 402.5,290.3 413.0,297.6 420.2,296.3 421.0,302.9 433.6,304.4 437.2,308.1 439.7,305.6 439.2,303.6 445.4,303.9 452.4,307.6 451.9,304.6 456.8,305.0 460.4,302.5 464.3,306.4 473.4,307.8 475.3,311.4 474.1,316.6 482.9,319.2 485.5,321.3 484.7,322.4 489.3,321.9 489.9,325.3 493.3,325.8 501.4,321.8 504.3,323.8 504.4,328.5 507.7,331.0 512.6,328.0 517.9,330.3 521.1,329.4 532.1,335.3 541.6,330.4 542.2,334.5 549.1,337.6 552.6,334.8 556.4,336.6 564.3,333.4 567.7,337.2 570.0,335.2 572.6,325.8 571.2,318.4 567.1,314.4 569.3,307.9 568.7,303.1 572.9,294.3 570.7,290.5 571.4,289.0 578.9,288.6 585.2,284.5 590.7,287.5 592.1,292.3 591.0,298.0 588.7,301.0 589.8,305.8 592.9,309.3 589.8,310.5 588.2,313.7 591.7,314.7 591.8,319.7 593.1,318.2 593.7,320.0 597.9,321.2 599.0,323.8 605.8,322.1 613.3,324.7 612.7,326.3 619.2,326.9 628.5,324.8 629.5,322.2 633.0,321.0 643.0,324.9 653.6,323.3 660.2,324.6 662.2,322.8 664.7,324.3 670.1,323.8 675.7,320.4 680.3,322.6 682.1,319.2 679.6,315.6 679.7,310.2 682.1,309.4 679.2,303.6 669.0,303.5 666.5,299.1 668.8,295.2 676.6,296.5 685.5,291.4 687.6,294.1 690.5,293.0 691.4,294.2 699.0,288.7 699.0,286.4 697.0,285.6 697.5,283.5 704.3,282.0 718.4,268.1 726.3,268.1 728.5,265.9 732.0,265.8 733.6,263.4 734.9,264.2 735.1,262.4 739.3,259.9 741.6,260.0 744.5,257.2 742.0,255.2 742.5,253.4 749.4,251.4 751.8,249.1 753.7,248.5 756.8,253.1 762.8,254.2 762.0,252.8 769.4,255.9 770.5,253.9 773.6,254.2 774.2,252.2 776.2,254.2 776.1,252.2 778.7,252.4 779.0,250.9 781.9,251.9 784.7,247.6 786.6,248.6 791.5,246.5 798.4,252.2 795.2,256.9 799.1,254.6 802.4,259.8 804.5,259.8 804.5,262.1 807.5,266.0 807.8,267.6 805.1,267.4 804.3,270.5 801.3,272.8 803.2,273.1 803.8,275.1 803.7,271.7 807.0,269.4 809.8,269.7 815.7,277.4 821.3,277.1 827.8,281.9 826.5,286.1 828.8,287.6 828.0,291.7 824.7,291.0 814.7,299.8 816.0,302.8 815.1,304.4 822.3,313.7 821.6,315.3 814.1,312.5 814.6,310.2 809.5,306.8 806.8,307.0 804.5,309.4 796.3,309.6 790.6,312.6 788.5,316.5 784.5,317.5 782.3,321.6 780.7,320.9 779.1,323.6 776.7,323.3 774.1,327.0 770.6,328.5 768.7,327.5 766.3,329.5 763.9,334.5 765.8,336.7 765.4,345.0 767.3,345.8 762.5,351.1 763.5,355.2 759.3,361.0 752.0,366.1 750.3,371.6 754.9,374.2 754.2,379.9 751.2,386.6 749.4,386.9 745.4,393.5 738.7,412.6 732.4,409.5 729.0,410.2 727.5,407.8 723.9,407.7 720.6,409.7 718.0,405.8 715.7,405.6 718.7,417.4 717.7,426.5 716.4,427.4 717.2,434.0 714.7,437.8 710.0,436.7 711.1,440.7 709.1,443.8 710.4,450.2 709.5,452.2 711.7,455.2 712.1,460.1 710.5,460.6 710.7,462.7 707.6,462.1 708.2,465.0 706.6,464.9 706.7,468.4 705.2,467.1 703.9,469.8 702.7,466.1 698.2,463.3 697.6,467.7 695.5,468.7 693.1,446.3 691.2,441.2 689.0,439.9 688.3,430.9 689.9,430.8 686.5,416.4 684.7,418.4 682.8,415.9 680.0,418.6 677.5,416.0 677.9,423.7 672.1,429.0 674.1,435.2 668.1,439.9 662.3,429.5 662.5,436.1 660.5,434.9 659.8,427.2 655.3,419.7 655.2,417.9 656.4,418.6 656.7,417.4 655.2,417.3 655.3,415.7 657.0,415.9 658.0,412.9 657.4,410.2 659.3,408.1 661.4,408.7 661.3,404.8 667.2,405.8 669.4,401.0 670.0,403.1 672.1,403.7 671.6,400.6 674.5,401.3 676.0,403.9 676.5,397.9 678.6,398.3 677.9,396.5 683.3,395.4 683.0,392.3 684.9,392.5 686.9,385.9 685.1,381.0 689.8,382.5 692.6,381.7 690.5,377.1 680.4,372.4 671.8,372.7 668.6,374.3 667.9,372.7 664.0,374.0 658.3,371.8 643.5,373.3 641.5,372.1 635.3,373.7 622.1,368.9 618.6,369.2 619.8,359.5 618.0,353.5 619.9,349.6 618.2,349.6 619.5,348.6 616.8,346.9 617.4,345.4 614.2,343.1 614.1,340.9 611.7,343.3 613.3,346.1 612.1,346.1 611.3,348.9 607.0,346.6 605.2,347.8 599.6,343.9 597.7,336.1 594.0,334.2 592.6,335.7 595.1,339.3 596.9,339.2 596.7,340.7 592.4,339.3 590.8,341.1 589.5,338.7 586.0,340.1 588.2,337.6 587.0,338.0 584.8,333.9 583.0,334.3 579.6,331.6 578.5,329.2 576.7,333.5 580.9,334.2 582.0,337.2 580.2,336.7 577.2,339.5 577.2,341.4 572.4,343.6 572.5,347.2 569.8,350.5 570.4,353.5 571.6,354.7 574.9,353.7 580.1,358.1 579.8,360.1 582.5,362.7 586.9,363.9 590.0,362.3 590.8,367.1 595.5,368.9 595.5,370.1 593.1,373.0 590.9,371.6 589.9,372.9 579.7,371.7 580.0,376.9 578.5,379.6 576.9,379.8 576.6,381.9 574.6,381.7 573.7,379.1 571.3,379.9 572.3,382.2 567.7,388.0 576.7,396.6 587.9,399.6 588.2,403.6 586.9,404.4 588.8,408.5 586.0,411.9 583.4,412.1 583.0,418.5 588.1,423.6 589.7,423.1 588.2,428.8 586.8,428.9 587.4,430.3 595.1,431.5 591.6,435.0 590.9,437.7 594.4,442.7 592.8,445.3 594.2,447.2 593.5,451.2 595.1,453.9 595.1,459.4 598.0,463.3 596.4,464.9 597.0,469.9 595.8,468.7 594.9,471.1 598.0,478.9 596.8,479.6 595.8,478.2 596.0,480.0 593.7,478.0 593.0,479.1 591.4,474.7 591.1,479.5 590.2,477.5 587.5,477.7 586.9,472.3 589.1,467.6 588.4,465.7 586.5,466.0 587.5,467.9 585.2,465.7 582.9,473.5 582.8,471.7 581.3,471.7 581.9,469.6 580.2,471.1 580.0,479.6 579.4,479.8 579.7,479.3 579.1,478.4 579.5,477.0 579.2,476.4 578.5,480.3 578.6,476.4 577.6,476.1 577.7,477.5 575.1,476.0 576.0,480.6 574.3,481.2 571.8,469.3 573.2,463.5 572.5,462.3 568.0,461.3 572.7,464.9 568.8,467.6 566.7,472.4 564.0,473.5 562.0,477.1 549.1,480.7 550.1,481.5 542.2,481.9 542.6,483.0 537.2,487.9 534.8,493.9 538.9,503.4 535.9,504.7 539.5,504.9 539.7,506.6 538.0,506.5 537.6,506.7 538.6,507.2 541.6,506.4 533.2,512.9 532.2,512.0 533.0,512.9 531.5,515.7 533.7,516.7 530.5,519.2 534.0,517.6 526.3,522.5 523.6,527.9 520.6,528.4 522.1,529.4 499.0,537.1 500.5,536.9 485.0,546.3 486.3,546.8 476.9,554.5 476.9,555.8 478.2,554.6 464.7,572.0 466.2,571.4 458.9,577.5 459.8,578.7 443.8,587.2 434.3,600.3 417.3,609.5 409.1,616.8 407.5,619.9 407.5,621.7 410.5,623.3 409.8,618.3 410.9,620.7 410.6,623.5 410.1,625.9 408.0,626.8 410.8,626.3 409.1,630.1 407.7,627.3 408.9,630.5 407.7,631.2 409.0,631.2 392.7,638.7 392.9,637.5 392.7,637.1 392.5,638.8 388.1,636.8 380.2,639.2 377.0,648.9 372.6,653.3 373.6,655.2 372.2,654.8 373.1,655.3 371.0,656.7 369.9,655.3 370.6,656.6 368.0,657.0 367.3,652.7 363.8,651.3 359.4,652.3 352.3,657.8 347.7,668.4 346.2,675.8 347.1,683.7 350.1,690.1 348.8,691.0 350.4,690.7 349.6,697.8 347.8,700.4 348.4,706.0 352.1,714.6 351.5,718.7 354.5,729.5 349.3,754.1 341.4,766.8 338.2,777.9 338.8,777.0 338.4,783.5 340.2,787.2 338.7,786.4 338.3,786.6 340.4,787.4 340.9,792.1 340.1,803.5 341.6,818.7 339.2,819.8 334.9,817.0 333.3,818.6 333.9,817.6 329.9,817.5 331.7,818.6 328.0,818.4 325.3,820.2 323.5,823.6 324.5,826.8 317.0,836.6 314.3,843.4 317.1,847.6 316.0,847.8 322.4,849.6 313.2,850.5 296.7,857.5 294.1,861.5 293.8,865.3 293.7,865.4 293.0,865.1 292.8,865.2 293.7,865.5 294.9,864.5 292.3,868.8 292.9,873.2 291.2,876.8 282.2,882.7 277.7,883.9 276.8,885.8 270.3,884.3 261.8,877.5 248.8,861.0 252.2,858.2 248.6,860.0 246.5,853.9 247.2,854.6 247.4,853.0 245.6,850.5 246.4,853.8 243.6,847.1 240.2,829.2 241.7,829.6 241.2,827.0 240.3,828.8 238.4,823.8 239.4,822.1 238.0,822.5 235.5,811.7 234.4,812.2 231.4,804.6 232.4,803.9 232.5,803.5 231.1,803.2 231.3,803.8 231.2,804.5 228.8,794.4 230.0,794.3 228.2,793.4 226.9,787.2 223.1,783.7 220.9,776.7 215.7,772.1 214.6,768.9 211.4,767.9 201.0,742.9 202.2,743.0 200.7,740.8 201.1,742.6 200.9,742.5 197.4,727.7 198.0,724.4 196.6,719.1 198.1,718.9 196.1,718.1 189.9,699.7 192.4,700.8 189.8,699.4 187.7,693.0 188.7,691.8 186.7,692.5 186.1,690.2 187.7,689.9 185.5,689.3 185.9,686.6 181.3,684.9 180.6,684.0 182.6,682.2 181.2,682.8 179.2,680.5 179.4,678.5 175.6,675.5 176.8,673.9 176.8,673.3 175.2,668.2 172.0,665.8 174.8,665.2 172.1,664.2 173.2,662.9 171.6,663.3 170.6,660.4 172.2,658.4 170.6,659.6 167.7,651.9 164.4,649.8 162.9,646.4 162.9,641.6 160.9,637.9 162.1,636.9 160.6,637.2 160.4,636.6 163.2,635.6 160.5,636.2 161.0,634.5 159.0,632.7 159.6,631.2 160.3,632.6 160.0,632.6 160.0,633.0 160.3,633.7 162.5,633.0 159.1,630.0 161.4,629.5 159.5,629.4 158.7,626.2 159.8,623.2 158.5,623.6 158.1,619.4 158.5,618.6 158.7,619.2 159.4,619.7 159.4,619.0 158.9,619.2 158.9,618.7 157.8,618.4 157.4,616.6 158.2,618.0 159.3,616.8 158.0,616.9 159.0,615.5 155.5,609.1 157.5,610.3 158.5,609.3 156.9,609.3 155.0,606.0 156.1,605.0 154.1,601.3 156.2,600.3 154.0,599.7 152.7,593.0 153.8,593.0 151.7,591.0 152.8,589.8 151.1,589.5 152.7,588.3 150.7,588.3 149.9,582.2 148.3,581.5 149.3,579.6 153.0,583.7 152.0,582.3 152.4,580.9 151.4,579.1 152.5,579.0 152.6,578.4 151.5,578.9 151.0,580.1 148.0,577.6 147.6,571.8 150.4,574.0 146.2,567.2 146.5,564.0 148.5,563.2 150.1,564.7 149.7,565.4 150.2,566.3 150.7,566.5 149.9,562.0 148.2,562.5 147.7,561.1 152.1,557.4 150.2,557.9 149.8,552.3 148.3,555.4 149.0,556.9 146.5,557.8 145.9,560.2 144.8,561.2 145.5,552.6 144.1,553.4 145.8,550.4 144.2,552.2 144.3,548.9 147.8,549.3 144.0,547.5 143.1,544.2 147.1,542.3 142.7,542.1 142.3,535.7 140.6,533.0 140.9,530.0 143.1,529.8 142.1,525.8 144.2,521.7 143.2,521.8 143.4,519.3 147.4,512.1 147.8,508.9 145.9,505.7 146.8,506.0 148.3,505.2 146.2,505.4 146.1,503.3 145.4,504.2 144.2,500.4 146.0,498.9 143.5,500.1 142.8,498.1 142.6,496.4 146.0,497.0 144.6,496.5 145.4,495.2 142.1,495.4 144.3,492.6 141.2,493.3 140.2,495.6 140.1,491.8 140.8,491.2 141.7,492.2 143.0,492.1 139.0,489.1 141.5,487.4 140.4,486.4 141.8,484.1 142.9,485.0 143.6,484.6 142.6,483.7 140.4,484.6 141.3,483.0 145.6,478.0 148.2,477.7 137.3,478.1 139.6,470.8 140.5,469.6 142.3,469.9 143.0,469.4 143.2,468.8 140.4,469.0 137.3,471.1 136.5,468.7 138.7,461.9 143.6,462.8 145.2,460.3 147.8,460.1 145.8,459.5 143.2,461.1 137.3,458.8 134.4,461.9 133.0,457.9 131.5,458.8 130.7,464.9 128.9,467.6 127.5,467.3 129.3,470.3 128.8,469.7 128.3,469.4 126.9,469.2 129.3,470.7 129.3,473.7 128.4,472.3 127.0,473.7 130.9,479.2 129.0,484.4 124.9,488.5 125.5,492.0 116.2,496.0 117.1,496.9 115.9,496.0 115.9,497.4 108.9,499.3 106.9,502.0 89.6,507.3 79.3,502.5 71.1,496.4 61.3,484.2 49.8,473.8 50.0,472.4 46.2,470.6 37.1,458.8 40.8,453.6 39.9,456.3 44.3,455.5 43.3,458.7 45.3,460.3 48.1,458.2 52.3,458.0 53.1,455.2 54.3,457.5 55.4,457.1 54.8,457.8 54.9,458.3 56.2,457.0 57.5,458.3 59.2,453.8 61.4,456.1 62.1,454.5 64.6,454.9 64.2,453.3 66.4,451.7 71.6,451.7 74.7,447.7 74.0,446.4 76.5,441.4 79.2,438.9 74.8,439.7 72.9,436.3 73.0,439.4 70.9,439.6 70.4,438.1 69.5,440.8 63.9,441.9 63.8,440.6 63.6,440.6 59.2,443.4 58.7,445.9 54.8,444.1 51.5,444.7 48.7,443.4 49.3,442.4 49.0,441.6 48.7,443.5 45.4,443.0 45.2,441.7 44.4,442.9 41.1,439.4 40.7,440.5 39.3,438.5 38.7,439.4 38.5,438.2 37.9,439.0 32.2,435.6 28.7,432.9 31.1,434.2 27.2,431.2 27.8,430.8 28.3,431.6 28.7,431.4 28.6,429.2 30.0,429.0 27.1,427.6 25.3,423.2 23.6,423.6 24.2,421.5 23.0,422.7 26.4,416.6 33.7,411.6 29.5,412.2 25.4,415.6 23.2,415.9 23.7,414.6 23.0,413.4 20.9,420.5 18.5,421.3 19.2,420.1 18.7,419.3 18.2,421.0 15.9,419.5 20.8,416.1 20.0,415.2 18.7,417.1 18.4,415.9 18.0,417.9 16.4,416.2 16.9,413.0 18.4,412.9 21.1,408.8 32.1,408.9 32.4,399.1 33.6,398.6 35.2,401.6 37.4,398.9 39.0,401.3 41.6,399.8 44.3,400.9 55.5,399.2 59.3,402.9 67.5,402.9 69.8,399.1 82.4,395.4 83.5,395.8 82.6,400.4 86.6,401.5 92.0,400.2 91.1,399.2 93.1,397.5 97.9,395.9 94.5,394.7 94.2,390.1 97.2,387.3 92.8,379.8 91.5,373.6 85.2,366.1 85.1,356.9 77.5,357.8 74.2,356.6 69.5,349.9 69.1,345.5 71.6,340.5 71.6,331.5 68.3,330.0 61.8,330.3 53.1,325.7 53.2,317.7 55.3,312.5 67.5,301.1 70.4,293.8 77.1,287.6 83.2,287.7 87.3,295.7 91.0,296.8 100.3,292.9 113.1,291.7 119.6,289.2 120.4,284.3 128.1,276.2 130.7,267.9 133.2,264.9 148.7,257.2 158.1,240.8 161.2,229.6 172.6,226.0 177.3,222.1 174.7,217.2 177.3,214.7 176.0,214.8 176.2,213.3 177.0,214.3 178.4,212.0 180.0,212.3 180.7,209.7 186.0,205.9 185.3,204.8 189.6,199.8 193.2,198.2 193.8,196.4 197.4,195.8 197.2,194.2 194.8,194.0 193.9,195.6 192.2,194.0 193.4,187.1 196.2,185.2 194.0,183.0 195.2,180.9 191.6,176.5 193.6,175.3 194.9,171.3 200.8,169.2 202.5,166.4 212.5,165.3 216.2,161.2 214.8,157.7 211.2,155.2 209.5,155.7 208.7,153.7 204.5,154.6 197.0,153.2 195.8,149.6 197.4,148.2 196.2,146.1 197.6,142.7 195.6,143.7 195.8,145.5 192.3,145.7 190.4,143.9 188.4,144.9 176.0,137.0 172.9,137.7 167.8,135.2 168.8,131.7 166.2,126.7 167.8,122.2 166.1,119.1 166.7,111.3 164.2,107.5 163.8,99.6 161.3,96.7 162.8,90.9 168.5,91.1 170.5,85.1 179.3,81.3 181.7,74.4 172.7,70.7 171.1,71.4 169.5,67.5 172.3,64.5 172.1,62.3 161.5,62.1 159.4,58.1 153.7,56.4 153.3,55.2 155.8,54.4 155.2,52.2 138.2,52.4 136.6,50.9 138.2,47.6 136.9,45.6 137.7,41.0 149.3,33.7 152.3,29.7 151.9,27.1 160.6,25.3 174.2,26.3 173.5,24.0 169.6,22.4 168.8,20.3 179.2,23.0 189.8,17.8 193.7,18.9 194.0,16.8 197.2,15.1 198.5,16.9 201.4,16.0 203.1,19.8 204.1,18.2 209.9,17.0 217.5,19.2 218.6,26.1 220.7,26.0 220.8,24.6 226.3,25.4 232.0,29.8 234.4,34.8 237.8,35.3 240.3,38.4 244.5,38.7 246.7,41.4 253.6,43.2 255.3,50.7 257.0,52.2 261.7,53.4 264.0,55.8 271.2,56.4 274.5,58.4 275.9,63.4ZM730.0,910.7 733.3,917.9 732.0,923.7 729.9,925.4 728.8,921.5 725.1,917.5 724.9,914.2 725.6,912.4 730.0,910.7ZM694.0,801.6 696.0,805.2 694.8,811.0 693.3,812.8 689.5,812.2 689.4,804.3 694.0,801.6ZM698.4,761.2 698.4,763.1 699.9,762.8 698.5,766.5 700.9,766.5 699.4,767.1 700.2,768.0 699.1,768.7 698.8,770.3 701.0,771.1 699.9,777.1 697.4,778.6 699.9,778.2 698.7,783.8 696.1,781.3 696.8,779.1 693.2,772.7 694.6,769.8 695.8,772.6 696.2,765.0 698.4,761.2ZM701.7,758.9 703.6,759.5 703.4,762.2 700.2,766.2 700.6,760.9 699.5,760.6 701.7,758.9ZM704.0,740.7 706.3,746.8 705.1,749.5 705.9,753.4 704.4,755.9 704.0,754.3 702.4,753.9 703.4,755.7 701.2,754.3 703.6,758.4 699.5,759.1 698.0,749.6 699.8,748.0 700.7,749.0 700.8,747.0 699.4,747.9 699.0,743.3 704.0,740.7ZM707.9,721.6 706.9,725.2 709.2,728.2 705.5,727.7 708.5,730.1 707.7,736.3 705.7,737.8 705.1,735.1 704.8,736.5 703.6,735.3 705.0,739.0 704.1,739.7 703.9,738.3 703.1,741.6 701.3,741.1 700.9,735.4 702.5,733.9 701.4,733.5 702.7,730.9 701.8,728.7 703.4,726.4 702.4,726.0 704.5,722.0 707.9,721.6ZM571.2,471.7 571.6,479.0 568.9,478.8 571.2,471.7Z","cities":{"Kolkata":[577.6,450.8,22.5726,88.3639],"Balurghat":[589.1,371.4,25.22,88.78],"Mumbai":[146.8,555.7,19.076,72.8777],"Bengaluru":[278.0,738.9,12.9716,77.5946],"Delhi":[267.3,269.6,28.6139,77.209],"Hyderabad":[302.8,606.5,17.385,78.4867],"Pune":[174.0,572.4,18.5204,73.8567]},"rail":[[589.1,371.4],[580.0,376.5],[571.3,377.7],[564.7,383.7],[561.9,399.0],[558.5,417.9],[563.5,430.8],[578.3,440.4],[578.3,449.4],[577.6,450.8]],"C":0.9271838545667874,"K":30,"LON0":67.6,"LAT0":37.6};
@@ -483,31 +541,50 @@ function enterDrive(){
   }, REDUCED?0:460);
 }
 function runDrive(){
-  const sd=$('#stage-drive'), taxi=$('#drive-taxi'), how=$('#howrah'), vic=$('#victoria'), jad=$('#jadavpur');
+  const sd=$('#stage-drive'), taxi=$('#drive-taxi'), tag=$('#landmark-tag');
+  const far=document.querySelector('.city-depth.far'), mid=document.querySelector('.city-depth.mid');
+  const how=$('#howrah'), vic=$('#victoria'), jad=$('#jadavpur');
+  const lamps=[...document.querySelectorAll('.lamp-post')];
   sd.classList.remove('revealed');
-  [how,vic,jad].forEach(x=>x.style.transform='');
-  taxi.style.transform='translateX(-50%) scale(.94)';
-  if(REDUCED||state.skip){ finishDrive(); return; }
-  const duration=5200, t0=performance.now();
-  const far=document.querySelector('.far-city'), mid=document.querySelector('.mid-city');
+  [far,mid,how,vic,jad,...lamps].forEach(x=>{x.style.transform='';x.style.opacity='';});
+  tag.style.opacity='0'; tag.style.transform='translateX(-50%) translateY(8px)';
+  taxi.style.transition='none'; taxi.style.transform='translate3d(-50%,0,0) scale(.60)';
+  if(REDUCED||state.skip){finishDrive();return;}
+  const duration=5400, t0=performance.now();
   function frame(now){
-    const t=Math.min(1,(now-t0)/duration), e=t*t*(3-2*t);
-    const drift=22*e, near=54*e, bob=Math.sin(t*Math.PI*8)*1.7*(1-t);
-    taxi.style.transform=`translateX(calc(-50% + ${Math.sin(t*Math.PI*2)*3}px)) translateY(${bob}px) scale(${.94+.06*e})`;
-    how.style.transform=`translate3d(${-drift}px,0,0)`;
-    vic.style.transform=`translate3d(${-near}px,0,0) scale(${1+.035*e})`;
-    jad.style.transform=`translate3d(${-drift*.62}px,0,0)`;
-    far.style.transform=`translate3d(${-drift*.22}px,0,0)`;
-    mid.style.transform=`translate3d(${-drift*.58}px,0,0)`;
+    const t=Math.min(1,(now-t0)/duration);
+    // Smooth cinematic acceleration/deceleration. The taxi travels forward while the camera tracks it.
+    const e=t<.18 ? (t/.18)*(t/.18) : t>0.82 ? 1-Math.pow((1-t)/.18,2) : t;
+    const travelX = -30 + 58*t;
+    const y=7 - 2.5*Math.sin(Math.PI*t);
+    const scale=.60 + .38*Math.min(1,t/.72);
+    const bob=Math.sin(t*Math.PI*18)*(.9*(1-t));
+    taxi.style.transform=`translate3d(calc(-50% + ${travelX}vw),${y+bob}%,0) scale(${scale})`;
+    const drift=120*e, midDrift=215*e, nearDrift=300*e;
+    far.style.transform=`translate3d(${-drift*.22}px,0,0) scale(${1+.018*e})`;
+    mid.style.transform=`translate3d(${-drift*.55}px,0,0) scale(${1+.03*e})`;
+    how.style.transform=`translate3d(${-nearDrift*.35}px,${-8*e}px,0) scale(${1+.05*e})`;
+    vic.style.transform=`translate3d(${-nearDrift*.82}px,${-5*e}px,0) scale(${1+.08*e})`;
+    jad.style.transform=`translate3d(${-nearDrift*.55}px,${-4*e}px,0) scale(${1+.06*e})`;
+    lamps.forEach((l,i)=>{ const dir=i<2?-1:1; l.style.transform=`translate3d(${dir*nearDrift*(.35+i*.08)}px,0,0) scale(${1+.08*e})`; });
+    document.querySelectorAll('.road-markings .center,.road-markings .side').forEach((m,i)=>{ m.style.backgroundPosition = `0 ${Math.round(t*820)}px`; });
+    // landmark focus beats: one landmark dominates the frame at a time.
+    let name='Howrah Station', opacityH=1, opacityV=.55, opacityJ=.3;
+    if(t<.34){name='Howrah Station';opacityH=1;opacityV=.34;opacityJ=.12}
+    else if(t<.69){name='Victoria Memorial';opacityH=.25;opacityV=1;opacityJ=.28}
+    else{name='Jadavpur University';opacityH=.14;opacityV=.28;opacityJ=1}
+    how.style.opacity=opacityH;vic.style.opacity=opacityV;jad.style.opacity=opacityJ;
+    tag.textContent=name; tag.style.opacity=t>.07&&t<.94?'1':'0'; tag.style.transform=`translateX(-50%) translateY(${t>.07&&t<.94?'0':'8px'})`;
     if(t<1) requestAnimationFrame(frame); else finishDrive();
   }
   requestAnimationFrame(frame);
 }
 function finishDrive(){
-  const sd=$('#stage-drive'), taxi=$('#drive-taxi');
-  taxi.style.transition='transform .8s cubic-bezier(.2,.85,.25,1)';
-  taxi.style.transform='translateX(-50%) translateY(0) scale(.98)';
-  setTimeout(()=>sd.classList.add('revealed'), REDUCED?0:700);
+  const sd=$('#stage-drive'), taxi=$('#drive-taxi'), tag=$('#landmark-tag');
+  taxi.style.transition='transform .85s cubic-bezier(.2,.85,.25,1)';
+  taxi.style.transform='translate3d(-50%,0,0) scale(.98)';
+  tag.style.opacity='0';
+  setTimeout(()=>sd.classList.add('revealed'),REDUCED?0:850);
 }
 $('#skip').addEventListener('click',()=>{ state.skip=true; });
 
